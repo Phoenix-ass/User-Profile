@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./Style/style.css" />
+  </head>
+
+
+  <body>
+
+
+    <div class="container">
+      <div id="logo">
+        <h1 class="logo">
+            <img src="./Images/logo.jpg">
+        </h1>
+        
+
+      <div class="leftbox">
+        <nav>
+          <a onclick="tabs(0)" class="active">
+            <i class="fa fa-user"></i>
+          </a>
+          <a onclick="tabs(1)" class="tab">
+            <i class="fa fa-credit-card"></i>
+          </a>
+          <a onclick="tabs(2)" class="tab">
+            <i class="fa fa-tv"></i>
+          </a>
+          <a onclick="tabs(3)" class="tab">
+            <i class="fa fa-tasks"></i>
+          </a>
+          <a onclick="tabs(4)" class="tab">
+            <i class="fa fa-cog"></i>
+          </a>
+        </nav>
+      </div>
+
+      <div class="rightbox">
+        <div class="profile tabshow">
+          <h1>Personal Info</h1>
+          <h2>Full Name</h2>
+          <input type="text"  name="full name" id="full name" placeholder="Full name" required>
+          <h2>Birthday</h2>
+          <input type="number"  name="number" id="number"  placeholder="Date" required>
+          <h2>Gender</h2>
+          <input type="text"  name="text" id="text" placeholder="Gender" required>
+          <h2>Email</h2>
+          <input type="email"  name="email" id="email"  placeholder="Email" required>
+          <h2>Password</h2>
+          <p>********</p>
+          <button type="submit" class="btn" onclick="myalert()">Update</button>
+        </div>
+
+        <div class="payment tabshow">
+          <h1>Payment Info</h1>
+          <h2>Payment Method</h2>
+          <label for="pay">Choose a Payment Method:<br><br></label>
+              <select id="pay" name="pay" size="">
+                  <option value="MasterCard">MasterCard</option>
+                  <option value="UPI ID">UPI ID</option>
+                  <option value="Online Payment">Online Payment</option>
+                  <option value="QR Scan">QR Scan</option>
+              </select>
+          <h2>Billing Address</h2>
+          <input type="text"  name="address" id="address" placeholder="Address" required>
+          <h2>Billing Date</h2>
+          <input type="number"  name="date" id="date" placeholder="Date" required>
+          <h2>Pincode</h2>
+          <input type="number"  name="number" id="number" maxlength="6" placeholder="Number" required><br><br>
+          <button type="submit"  class="btn" onclick="myalert()">Update</button>
+        </div>
+
+        <div class="subscription tabshow">
+          <h1>Subscription Info</h1>
+          <h2>Payment Method</h2>
+              <p>August 19, 2023</p>
+          <h2>Next Charges</h2>
+          <p>$10.99 <span>includes Tax</span></p>
+          <h2>Plan</h2>
+          <p>Chosen Plan: Monthly</p>
+          <h2>Pkan Amount</h2>
+          <p>$198.99/monthly</p>
+          <button type="submit" class="btn" onclick="myalert()">Update</button>
+        </div>
+
+        <div class="privacy tabshow">
+          <h1>Privacy Settings</h1>
+          <h2>Manage Email Notifications</h2>
+              <p></p>
+          <h2>Manage Privacy Settings</h2>
+          <p></p>
+          <h2>View Terms Of Use</h2>
+          <p></p>
+          <h2>Personized and Experience</h2>
+          <p></p>
+          <h2>Protect Account</h2>
+          <p></p>
+          <button type="submit" class="btn" onclick="myalert()">Update</button>
+        </div>
+
+        <div class="settings tabshow">
+          <h1>Account Settings</h1>
+          <h2>Sync Watchlist</h2>
+              <p></p>
+          <h2>Hold Subscription</h2>
+          <p></p>
+          <h2>Cancel Subscription</h2>
+          <p></p>
+          <h2>Your Devices</h2>
+          <p></p>
+          <h2>Referrals</h2>
+          <p></p>
+          <button type="submit" class="btn" onclick="myalert()">Update</button>
+        </div>
+
+
+      </div>
+    </div>
+
+    <footer>
+      <p>
+       Click Here For Subscription
+        <a href="https://gowthamrajnetwork.com/" target="_blank"
+          >Gowthamraj Network</a>
+        ♡
+      </p>
+    </footer>
+
+    <video id="videoBg" poster="./Images/Poster.jpeg" autoplay muted loop>
+      <source src="./Images/Video 2.mp4" type="video/mp4(VLC)">
+    </video>
+
+    
+    <script>
+      const tabBtn = document.querySelectorAll(".tab");
+      const tab = document.querySelectorAll(".tabshow");
+
+      function tabs(panelIndex) {
+        tab.forEach(function(node){
+          node.style.display = "none";
+        });
+        tab[panelIndex].style.display = "block";
+      }
+      tabs(0);
+    </script>
+    <script>
+      $(".tab").click(function(){
+        $(this).addClass("active").siblings().removeClass("active");
+      })
+    </script>
+    <script>
+      function myalert() {
+          alert("Updated Successfully.")
+      }
+  </script>
+  </body>
+</html>
